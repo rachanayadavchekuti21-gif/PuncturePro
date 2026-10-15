@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PuncturePro helps local mechanics and puncture shops promote offers and track customer referrals.">
+  <title>PuncturePro | Local Trust, More Customers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">P</span><span>PuncturePro</span></a>
+    <nav><a href="#how">How it works</a><a href="#offers">Offers</a><a href="#dashboard">Dashboard</a></nav>
+    <a class="nav-cta" href="#dashboard">Try demo</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LOCAL SHOPS. STRONGER NETWORK.</p>
+        <h1>Turn local trust into <span>more customers.</span></h1>
+        <p class="hero-text">A simple referral and promotion platform for mechanics and puncture shops serving India's two-wheeler community.</p>
+        <div class="hero-actions"><a class="button primary" href="#dashboard">Explore dashboard</a><a class="button secondary" href="#how">See how it works</a></div>
+        <div class="hero-stats"><div><strong>QR</strong><small>Shop profiles</small></div><div><strong>01</strong><small>Referral code</small></div><div><strong>₹</strong><small>Reward-ready</small></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><span class="live-dot"></span> Shop preview <span class="pill">DEMO</span></div>
+        <div class="shop-avatar">🛠️</div><h2>Ravi Bike Care</h2><p class="muted">Mechanic & puncture service</p>
+        <div class="shop-tags"><span>Tyre repair</span><span>Oil change</span><span>Quick service</span></div>
+        <div class="qr-row"><div class="qr-pattern" aria-label="Decorative QR-style placeholder"><span></span></div><div><strong>Share this shop</strong><p class="muted">Demo referral code</p><code>RAVI25</code></div></div>
+        <button class="button primary full" id="copyCode">Copy referral code</button>
+        <p class="tiny" id="copyMessage" aria-live="polite">Demo only — no real shop is connected.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="section-heading"><p class="eyebrow">THREE SIMPLE STEPS</p><h2>How PuncturePro works</h2><p>Bring trusted local service shops into a measurable referral network.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon">⌕</div><h3>1. Discover</h3><p>Create a simple shop profile with location, timings, services and a shareable QR/link.</p></article>
+        <article class="feature"><div class="feature-icon">↗</div><h3>2. Promote</h3><p>Share offers through WhatsApp and regional-language posts using ready-to-edit content.</p></article>
+        <article class="feature"><div class="feature-icon">★</div><h3>3. Reward</h3><p>Record referrals and reward verified visits based on the brand's approved rules.</p></article>
+      </div>
+    </section>
+
+    <section class="section offers-section" id="offers">
+      <div class="section-heading"><p class="eyebrow">SAMPLE CAMPAIGNS</p><h2>Offers people can share</h2><p>Example offers for a prototype. Replace these with approved partner offers before launch.</p></div>
+      <div class="offer-grid">
+        <article class="offer"><div class="offer-icon">🛞</div><span class="offer-label">TYRE CARE</span><h3>Safety check-up</h3><p>Promote a tyre pressure and condition check at participating shops.</p><button class="text-button shareOffer" data-offer="Tyre safety check-up at Ravi Bike Care">Share sample offer ↗</button></article>
+        <article class="offer"><div class="offer-icon">🔧</div><span class="offer-label">SERVICE</span><h3>Quick service reminder</h3><p>Help riders remember basic maintenance and find a nearby mechanic.</p><button class="text-button shareOffer" data-offer="Quick two-wheeler service reminder from PuncturePro">Share sample offer ↗</button></article>
+        <article class="offer"><div class="offer-icon">🎁</div><span class="offer-label">REFERRAL</span><h3>Refer a rider</h3><p>Invite a friend to a participating shop. Any reward is subject to partner terms.</p><button class="text-button shareOffer" data-offer="Find a local two-wheeler service shop with PuncturePro. Demo code: RAVI25">Share sample offer ↗</button></article>
+      </div>
+      <p class="tiny center" id="shareMessage" aria-live="polite"></p>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading"><p class="eyebrow">INTERACTIVE DEMO</p><h2>Referral dashboard</h2><p>Add sample referrals and see the counts update in this browser. Data is stored locally only.</p></div>
+      <div class="metrics">
+        <div class="metric"><span>Total referrals</span><strong id="totalCount">0</strong><small>Demo records</small></div>
+        <div class="metric"><span>Verified visits</span><strong id="verifiedCount">0</strong><small>Marked as visited</small></div>
+        <div class="metric"><span>Pending</span><strong id="pendingCount">0</strong><small>Need follow-up</small></div>
+      </div>
+      <div class="dashboard-grid">
+        <form class="panel" id="referralForm">
+          <h3>Add a referral</h3>
+          <label for="customerName">Customer name</label><input id="customerName" name="customerName" placeholder="e.g. Rahul" required maxlength="60">
+          <label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="e.g. 98XXXXXX10" maxlength="20">
+          <label for="service">Interested service</label><select id="service" name="service"><option>Tyre repair</option><option>Tyre check-up</option><option>Oil change</option><option>General service</option><option>Other</option></select>
+          <label for="refCode">Referral code</label><input id="refCode" name="refCode" value="RAVI25" required maxlength="20">
+          <button class="button primary full" type="submit">Add referral</button>
+          <p class="tiny">Use fictional information in this demo. Do not enter sensitive customer data.</p>
+        </form>
+        <div class="panel table-panel">
+          <div class="table-head"><h3>Recent referrals</h3><button class="text-button" id="clearData" type="button">Clear demo data</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Customer</th><th>Service</th><th>Status</th><th>Action</th></tr></thead><tbody id="referralRows"><tr><td colspan="4" class="empty">No referrals yet. Add one to try the demo.</td></tr></tbody></table></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section impact">
+      <div><p class="eyebrow">PILOT PLAN</p><h2>Start small. Measure what matters.</h2><p>Test with 25 local shops, then review verified visits, repeat visits, shop participation and cost per acquired customer before scaling.</p></div>
+      <div class="pilot-points"><p>✓ Low-cost shop onboarding</p><p>✓ WhatsApp-friendly promotions</p><p>✓ Trackable referral codes</p><p>✓ Pilot metrics before expansion</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">P</span><span>PuncturePro</span></a><p>Student concept prototype · Not affiliated with any tyre brand.</p><p>© <span id="year"></span> PuncturePro</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
